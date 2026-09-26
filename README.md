@@ -105,6 +105,13 @@ Construya un programa que:
 
 ## Entrega
 
+Realice los ejercicios siguiendo las instrucciones y verificando que cumpliera con lo estipulado, en el primero tenia valores quemados y un arreglo que no funcionaba para lo que pedían y el segundo no tenia nada XD, de igual manera agregue una pequeña interfaz para que se muestre los resultados más ordenados, agregue validación con un do-while para que no se ingresarán números negativos, esto fue en ambos ejercicios, agregue los cálculos que pedía, también utilice un for para recorrer el arreglo y dos para la matriz, y pues ya todos los valores que se necesitaban fueron pedidos por teclado al usuario. Y como investigacion cambie un if que había puesto para que identificara error si se ingresaba un negativo por el do-while que era mas eficiente. 
+
+Gracias, buen fin de semana :)
+
+
+
+
 Entregue los dos archivos `.java`, debidamente nombrados y capaces de compilar y ejecutarse sin errores.
 
 **Antes de escribir código, identifique las entradas, el proceso y las salidas. El compilador detecta errores de sintaxis; la lógica todavía corre por cuenta del programador.**
