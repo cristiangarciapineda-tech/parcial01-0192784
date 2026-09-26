@@ -1,57 +1,78 @@
 
 import java.util.Scanner;
 
-
 public class Ejercicio01 {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
 
-        int consumoTotal = 0;
-        double promedio = 0;
-        int consumo1 = 100;
-        int consumo2 = 67;
-        int consumo3 = 55;
-        int consumo4 = 34;
-        int consumo5 = 62;
-        int consumo6 = 73;
-        int consumo7 = 163;
-        int consumo8 = 126;
-        int consumo9 = 184;
-        int consumo10 = 250;
+        Scanner lector = new Scanner(System.in);
 
-        int[] consumos = new int {1, 2, 3, 4, 5, 6, 7, 8, 9, 10} {
+        int[] consumos = new int[10];
 
-            
+        int total = 0;
+        int mayor = 0;
+        int sectorMayor = 0;
+
+        for (int i = 0; i < consumos.length; i++) {
 
 
-            for (int i = 0; i < args.length; i++) {
+            System.out.println("Ingrese el consumo del sector " + (i + 1) + ":");
+            consumos[i] = lector.nextInt();
 
-                System.out.println(consumos [1] "Ingrese consumo dia 1", consumo1);
-                System.out.println(consumos [2]"Ingrese consumo dia 2", consumo2);
-                System.out.println(consumos [3]"Ingrese consumo dia 3", consumo3);
-                System.out.println(consumos [4]"Ingrese consumo dia 4", consumo4);
-                System.out.println(consumos [5]"Ingrese consumo dia 5", consumo5);
-                System.out.println(consumos [6]"Ingrese consumo dia 6", consumo6);
-                System.out.println(consumos [7]"Ingrese consumo dia 7", consumo7);
-                System.out.println(consumos [8]"Ingrese consumo dia 8", consumo8);
-                System.out.println(consumos [9]"Ingrese consumo dia 9", consumo9);
-                System.out.println(consumos [10]"Ingrese consumo dia 10", consumo10);
-
-
-                consumoTotal = consumo1 + consumo2 + consumo3 + consumo4 + consumo5 + consumo6 + consumo7 + consumo8 + consumo9 + consumo10;
-                System.out.println("Consumo total: " + consumoTotal);
-                promedio = consumoTotal / 10;
-                System.out.println("Promedo total: " + promedio);
-                }
-
-                
+            if (consumos[i] < 0) {
+                System.out.println("ERROR, el numero no puede ser negativo");
             }
 
-            
+
+            total = total + consumos[i];
+
+            if (i == 0) {
+                mayor = consumos[i];
+                sectorMayor = i + 1;
+            } else if (consumos[i] > mayor) {
+                mayor = consumos[i];
+                sectorMayor = i + 1;
+            }
         }
 
+        double promedio = (double) total / consumos.length;
 
+        int sobreElPromedio = 0;
+        int rachaActual = 0;
+        int rachaMayor = 0;
 
-        scanner.close();
+        for (int i = 0; i < consumos.length; i++) {
+
+            if (consumos[i] > promedio) {
+
+                sobreElPromedio++;
+                rachaActual++;
+
+                if (rachaActual > rachaMayor) {
+                    rachaMayor = rachaActual;
+                }
+
+            } else {
+                rachaActual = 0;
+            }
+        }
+
+        System.out.println("Consumo de agua por sectores");
+
+        System.out.println("Consumo total: " + total);
+        System.out.println("Promedio: " + promedio);
+        System.out.println("Sector con mayor consumo: " + sectorMayor);
+        System.out.println("Mayor consumo: " + mayor);
+        System.out.println("Sectores sobre el promedio: " + sobreElPromedio);
+        System.out.println("Racha mas larga: " + rachaMayor);
+
+        System.out.println();
+        System.out.println("Lista de Consumo");
+
+        for (int i = 0; i < consumos.length; i++) {
+            System.out.println("Sector " + (i + 1) + ": " + consumos[i]);
+        }
+
+        lector.close();
     }
 }
+
